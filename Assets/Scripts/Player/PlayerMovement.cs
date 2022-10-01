@@ -35,9 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        /*_movement.Set(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        _movement = _movement.normalized * _speed * Time.deltaTime;
-        _playerRigidbody.MovePosition(transform.position + _movement);*/
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
