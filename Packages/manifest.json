@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "com.unity.2d.sprite": "file:C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.10f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\com.unity.2d.sprite",
-    "com.unity.collab-proxy": "1.17.2",
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.collab-proxy": "1.17.7",
     "com.unity.feature.development": "1.0.1",
-    "com.unity.ide.rider": "3.0.15",
+    "com.unity.ide.rider": "3.0.16",
     "com.unity.ide.visualstudio": "2.0.16",
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.postprocessing": "3.2.2",
@@ -11,7 +11,6 @@
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.4",
-    "com.unity.ugui": "1.0.0",
     "com.unity.ui.builder": "file:C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ui.builder",
     "com.unity.visualeffectgraph": "file:C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.visualeffectgraph",
     "com.unity.visualscripting": "1.7.8",
