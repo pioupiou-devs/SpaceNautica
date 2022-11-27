@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40c7cf1cb71a5441b144092de51bb70, type: 3}
+  m_Name: color1
+  m_EditorClassIdentifier: 
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.9994968, g: 0.9724776, b: 0.92582, a: 0.19332159}
+    key1: {r: 0.20768765, g: 0.013585419, b: 0.008309701, a: 0.67448735}
+    key2: {r: 0.029952427, g: 0.0754093, b: 0.0009761686, a: 0.9762846}
+    key3: {r: 0.38344225, g: 0.4206559, b: 0.43717343, a: 0.45685226}
+    key4: {r: 0.76230085, g: 0.47878057, b: 0.112031385, a: 0.6900449}
+    key5: {r: 0.29396328, g: 0.47299927, b: 0.40965706, a: 0.17104518}
+    key6: {r: 0, g: 0, b: 0, a: 0.6927365}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 2192
+    ctime1: 5158
+    ctime2: 20529
+    ctime3: 31907
+    ctime4: 35181
+    ctime5: 46638
+    ctime6: 0
+    ctime7: 0
+    atime0: 379
+    atime1: 19278
+    atime2: 40600
+    atime3: 46822
+    atime4: 55657
+    atime5: 59248
+    atime6: 59814
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 7

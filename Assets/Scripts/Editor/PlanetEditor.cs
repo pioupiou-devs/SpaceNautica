@@ -30,6 +30,22 @@ public class PlanetEditor : Editor
             planet.GeneratePlanet();
         }
 
+        if(GUILayout.Button("Clear Planet"))
+        {
+            planet.Clear();
+        }
+
+        if (GUILayout.Button("Save Planet Settings"))
+        {
+            planet.SaveSettings();
+        }
+
+        if (GUILayout.Button("Load Planet Settings"))
+        {
+            planet.LoadSettings();
+            planet.GeneratePlanet();
+        }
+
         DrawSettingsEditor(planet.shapeSettings, planet.OnShapeSettingsUpdated, ref planet.shapeSettingsFoldout, ref shapeEditor);
         DrawSettingsEditor(planet.colorSettings, planet.OnColorSettingsUpdated, ref planet.colorSettingsFoldout, ref colorEditor);
     }
