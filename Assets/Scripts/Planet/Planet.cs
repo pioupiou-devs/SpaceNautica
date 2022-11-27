@@ -2,8 +2,6 @@ using UnityEngine;
 
 public enum FaceRenderMask { All, Top, Bottom, Left, Right, Front, Back };
 
-[RequireComponent(typeof(SphereCollider))]
-[RequireComponent(typeof(SphereCollider))]
 public class Planet : MonoBehaviour
 {
     [Header("General Settings")]
@@ -30,6 +28,9 @@ public class Planet : MonoBehaviour
     [SerializeField]
     internal Material _planetMaterial;
     internal Material planetMaterial;
+    [SerializeField]
+    internal Material _atmosphereMaterial;
+    internal Material atmosphereMaterial;
 
     [Header("Shape Settings")]
     [HideInInspector]
@@ -45,6 +46,8 @@ public class Planet : MonoBehaviour
     void Initialize()
     {
         planetMaterial = new Material(_planetMaterial);
+        atmosphereMaterial = new Material(_atmosphereMaterial);
+        transform.parent.Find("Atmosphere").GetComponent<MeshRenderer>().material = atmosphereMaterial;
 
         if ((chunks = transform.Find("Chunks")?.gameObject) == null)
         {
@@ -132,8 +135,9 @@ public class Planet : MonoBehaviour
         GenerateMesh();
         GenerateColors();
 
-        SphereCollider shpereCollider =  GetComponent<SphereCollider>();
-        shpereCollider.radius = Mathf.Round(shapeGenerator.elevationMinMax.Max);
+        Transform atmosTransform =  transform.parent.Find("Atmosphere");
+        atmosTransform.localScale = Vector3.one * shapeSettings.planetRadius * 0.35f;
+        atmosTransform.localPosition = Vector3.zero;
 
         float endTime = Time.realtimeSinceStartup;
         Debug.Log($"GeneratePlanet() took {endTime - startTime} seconds");

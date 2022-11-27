@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class GravitationObject : MonoBehaviour
 {
     private const float GRAVITY = 667.4f;
@@ -16,12 +15,8 @@ public class GravitationObject : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = transform.parent.GetComponentInChildren<Rigidbody>();
         rb.useGravity = false;
-        if (!canBeAttracted)
-        {
-            //rb.constraints = RigidbodyConstraints.FreezePosition;
-        }
     }
 
     private void Start()
@@ -40,7 +35,7 @@ public class GravitationObject : MonoBehaviour
         if (gravitationObjects == null)
             gravitationObjects = new List<GravitationObject>();
 
-            gravitationObjects.Add(this);
+        gravitationObjects.Add(this);
     }
 
     private void OnDisable()
@@ -48,8 +43,8 @@ public class GravitationObject : MonoBehaviour
         gravitationObjects.Remove(this);
     }
 
-     private void FixedUpdate()
-     {
+    private void FixedUpdate()
+    {
         foreach (GravitationObject gravitationObject in gravitationObjects)
         {
             if (gravitationObject != this && gravitationObject.canBeAttracted)
@@ -57,7 +52,7 @@ public class GravitationObject : MonoBehaviour
                 Attract(gravitationObject);
             }
         }
-     }
+    }
 
     private void InitVelocityWith(GravitationObject gravitationObject)
     {
@@ -84,6 +79,8 @@ public class GravitationObject : MonoBehaviour
 
         float forceMagnitude = GRAVITY * (rb.mass * rbToAttract.mass) / distanceSquared;
         Vector3 force = direction.normalized * forceMagnitude;
+        if (objToAttract.name == "Planet")
+            Debug.Log($"[{name} to {objToAttract.name}] => Force: {force}");
 
         rbToAttract.AddForce(force);
     }

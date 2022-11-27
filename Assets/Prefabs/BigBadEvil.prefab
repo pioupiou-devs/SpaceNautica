@@ -113,9 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CircleRadius: 1
   TurnChance: 0.05
-  MaxRadius: 5
+  MaxRadius: 9.27
   Mass: 1
-  MaxSpeed: 1
+  MaxSpeed: 6.42
   MaxForce: 1
   _headRigidbody: {fileID: 0}
   _monsterSegment: {fileID: 1312349360573529174, guid: 4b136710186fa81419e32ef11824023f, type: 3}

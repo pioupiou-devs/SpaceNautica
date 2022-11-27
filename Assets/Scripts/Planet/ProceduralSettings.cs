@@ -15,7 +15,7 @@ public class ProceduralSettings
 
     private ColorSettings GenerateRandomColorGradient()
     {
-        ColorSettings colorSettings = new ColorSettings();
+        ColorSettings colorSettings = ScriptableObject.CreateInstance<ColorSettings>();
         Gradient gradient = new Gradient();
         gradient.mode = GradientMode.Blend;
         GradientColorKey[] colorKeys = new GradientColorKey[Random.Range(5, 8)];
@@ -35,7 +35,7 @@ public class ProceduralSettings
 
     private ShapeSettings GenerateRandomShape()
     {
-        ShapeSettings shapeSettings = new ShapeSettings();
+        ShapeSettings shapeSettings = ScriptableObject.CreateInstance<ShapeSettings>();
         shapeSettings.planetRadius = Random.Range(2f, 5f);
         shapeSettings.noiseLayers = new ShapeSettings.NoiseLayer[Random.Range(3, 5)];
         for (int i = 0; i < shapeSettings.noiseLayers.Length; i++)

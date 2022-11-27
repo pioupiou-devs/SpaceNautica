@@ -42,7 +42,7 @@ public class BigBadEvil_movement : MonoBehaviour
 
         // Update segments every 300ms
         //InvokeRepeating("Move", 0.3f, 0.3f); 
-        InvokeRepeating("Move", 0.3f, 0.3f);
+        InvokeRepeating("Move", 0.3f*transform.localScale.x, 0.3f*transform.localScale.x);
     }
 
     // Update is called once per frame
@@ -85,6 +85,7 @@ public class BigBadEvil_movement : MonoBehaviour
             GameObject g = (GameObject)Instantiate(_monsterSegment,
                                                 v,
                                                 Quaternion.identity);
+                                                g.transform.localScale = this.transform.localScale;
             // Keep track of it => add it to list
             tail.Insert(0, g.transform);
         }

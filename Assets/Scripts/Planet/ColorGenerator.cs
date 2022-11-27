@@ -21,6 +21,7 @@ public class ColorGenerator
     {
         planet.planetMaterial.SetVector("_elevationMinMax", new Vector2(elevationMinMax.Min, elevationMinMax.Max));
         planet.planetMaterial.SetFloat("_elevationMean", elevationMinMax.Mean);
+        planet.atmosphereMaterial.SetFloat("_elevationMean", elevationMinMax.Mean);
     }
 
     public void UpdateColors()
@@ -34,5 +35,6 @@ public class ColorGenerator
         texture.Apply();
 
         planet.planetMaterial.SetTexture("_texture", texture);
+        planet.atmosphereMaterial.SetTexture("_texture", texture);
     }
 }
