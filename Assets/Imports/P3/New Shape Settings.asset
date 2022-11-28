@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e73784907b0fe41aea1ad72ae349d0, type: 3}
+  m_Name: New Shape Settings
+  m_EditorClassIdentifier: 
+  planetRadius: 2.218457
+  noiseLayers:
+  - enabled: 1
+    useFirstLayerAsMask: 0
+    noiseSettings:
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.54297096
+        numLayers: 6
+        baseRoughness: 0.68316233
+        roughness: 0.17817795
+        persistence: 0.089984655
+        center: {x: 0.74065065, y: -0.02854383, z: 0.2868409}
+        minValue: 0.5078886
+      rigidNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
+  - enabled: 1
+    useFirstLayerAsMask: 1
+    noiseSettings:
+      filterType: 1
+      simpleNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+      rigidNoiseSettings:
+        strength: 0.54981107
+        numLayers: 7
+        baseRoughness: 0.47137195
+        roughness: 0.77464163
+        persistence: 0.9469017
+        center: {x: 0.17228377, y: 0.78177357, z: -0.63507247}
+        minValue: 0.98576105
+        weightMultiplier: 0.7410096
+  - enabled: 1
+    useFirstLayerAsMask: 1
+    noiseSettings:
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.4973945
+        numLayers: 4
+        baseRoughness: 0.8018837
+        roughness: 0.14483798
+        persistence: 0.8491657
+        center: {x: 0.069358945, y: -0.89111805, z: -0.9095259}
+        minValue: 0.55570596
+      rigidNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8

@@ -12,6 +12,7 @@ public class ShapeGenerator
     public void UpdateSettings(ShapeSettings shapeSettings)
     {
         this.shapeSettings = shapeSettings;
+        
         noiseFilters = new INoiseFilter[shapeSettings.noiseLayers.Length];
         for (int i = 0; i < noiseFilters.Length; i++)
         {
