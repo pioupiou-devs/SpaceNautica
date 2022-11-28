@@ -71,39 +71,19 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float ascend = Input.GetAxisRaw("Jump");
 
-        Vector3 direction = new Vector3(horizontal, ascend, vertical)/*.normalized*/;
-
-        //Debug.Log("direction " + direction); 
-
-        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camera.transform.eulerAngles.y;
-        Vector3 front = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-        //Debug.Log("front " + front); 
-        Vector3 moveDirection = direction * front.x;
-
-        //Debug.Log("move direction " + moveDirection);
-
-
+        // move player in function of the camera with addforce
+        _movement = (horizontal * _camera.transform.right + vertical * _camera.transform.forward).normalized;
+        _movement.y = ascend;
 
         if (gravity)
         {
-            _playerRigidbody.AddForce(direction * 20f);
+            _playerRigidbody.AddForce(_movement * _speed, ForceMode.Acceleration);
         }
         else
         {
-            _playerRigidbody.AddForce(direction * 20f);
+            _playerRigidbody.AddForce(_movement * _speed, ForceMode.Acceleration);
             _playerRigidbody.velocity = _playerRigidbody.velocity * 0.96f;
         }
-
-        /*if (direction.magnitude >= 0.1f)
-        {  
-            //_playerRigidbody.AddForce(direction);
-            //float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camera.transform.eulerAngles.y;
-            //Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            //_playerRigidbody.MovePosition(transform.position + moveDirection.normalized * _speed * Time.deltaTime);
-            
-        }*/
-
-        //https://docs.unity3d.com/ScriptReference/Rigidbody.AddTorque.html add torque -> rotate on himself
     }
 
     void Rotate()
