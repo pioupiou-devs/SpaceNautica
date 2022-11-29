@@ -15,7 +15,7 @@ public class GravitationObject : MonoBehaviour
 
     private void Awake()
     {
-        rb = transform.parent.GetComponentInChildren<Rigidbody>();
+        rb = transform.parent.GetComponent<Rigidbody>();
         rb.useGravity = false;
     }
 
@@ -79,8 +79,6 @@ public class GravitationObject : MonoBehaviour
 
         float forceMagnitude = GRAVITY * (rb.mass * rbToAttract.mass) / distanceSquared;
         Vector3 force = direction.normalized * forceMagnitude;
-        if (objToAttract.name == "Planet")
-            Debug.Log($"[{name} to {objToAttract.name}] => Force: {force}");
 
         rbToAttract.AddForce(force);
     }

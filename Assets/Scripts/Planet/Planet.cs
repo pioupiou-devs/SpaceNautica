@@ -60,7 +60,6 @@ public class Planet : MonoBehaviour
     {
         planetMaterial = new Material(_planetMaterial);
         atmosphereMaterial = new Material(_atmosphereMaterial);
-        transform.parent.Find("Atmosphere").GetComponent<MeshRenderer>().material = atmosphereMaterial;
 
         if ((chunks = transform.Find("Chunks")?.gameObject) == null)
         {
@@ -107,6 +106,8 @@ public class Planet : MonoBehaviour
             bool renderFace = faceRenderMask == FaceRenderMask.All || (int)faceRenderMask - 1 == i;
             meshFilters[i].gameObject.SetActive(renderFace);
         }
+        
+        transform.parent.Find("Atmosphere").GetComponent<MeshRenderer>().material = atmosphereMaterial;
     }
 
     #region Events
@@ -154,6 +155,7 @@ public class Planet : MonoBehaviour
 
         float endTime = Time.realtimeSinceStartup;
         Debug.Log($"GeneratePlanet() took {endTime - startTime} seconds");
+        timeManager.nbPlanetGenerated++;
     }
 
     private void GenerateMesh()
