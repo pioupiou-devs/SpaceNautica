@@ -15,7 +15,10 @@ public class GravitationObject : MonoBehaviour
 
     private void Awake()
     {
+        if(name == "Model")
         rb = transform.parent.GetComponent<Rigidbody>();
+        else
+        rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
     }
 
